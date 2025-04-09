@@ -1,0 +1,79 @@
+@{
+    ViewData["Title"] = "Strona Kontaktowa";
+}
+
+
+<div class="nav-container">
+    <div class="nav-icons">
+        <button data-scroll="section1">
+            <img src="~/img/home.png" alt="Home">
+        </button>
+        <button data-scroll="section2">
+            <img src="~/img/info.png" alt="Info">
+        </button>
+        <button data-scroll="section3">
+            <img src="~/img/gallery.png" alt="Gallery">
+        </button>
+        <button data-scroll="contact">
+            <img src="~/img/contact.png" alt="Contact">
+        </button>
+    </div>
+</div>
+
+
+<section id="section1">
+    <img src="~/img/logo.jpg" alt="Photo">
+    <div class="content">
+    <p>Wirtualne biuro, które wspiera działalności gospodarcze w zachowaniu elastyczności i efektywności. Rejestracja, poczta, telefony – wszystko w jednym miejscu!</p>
+    <a class="btn" data-scroll="contact">KONTAKT</a>
+    </div>
+</section>
+
+<section id="section2">
+    <div class="text">
+    <h3>O NAS</h3>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+    </div>
+    <div class="map">
+        
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2520.2991450673267!2d19.109891190952368!3d50.82562269860999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4710b42a64237c73%3A0xf77bcd0852ff043a!2sDekabryst%C3%B3w%2035b%2F320%2C%2042-218%20Cz%C4%99stochowa!5e0!3m2!1spl!2spl!4v1743679724202!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+</section>
+
+<section id="section3">
+    <h3>CENA</h3>
+    <div class="price-box">100 zł</div>
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</p>
+</section>
+
+<section id="contact">
+    <h3>KONTAKT Z NAMI</h3>
+    <form asp-action="SaveContact" asp-controller="Contact" method="post">
+       <div>
+        <label for="name">Imie i Nazwisko</label>
+        <input type="text" id="name" name="name" required />
+        </div>
+
+        <div>
+        <label for="phoneNumber">Numer telefonu</label>
+        <input type="tel" id="phoneNumber" name="phoneNumber" required />
+        </div>
+        @if (TempData["Message"] != null)
+    {
+        <p style="color:  white; font-size: 12px; margin-top: 20px;">@TempData["Message"]</p>
+    }
+        <button type="submit">Wyślać</button>
+    </form>
+   
+    <div class="footer-line"></div> 
+    <footer class="footer text-muted">
+        <div class="container">
+            &copy; 2025 - MyMvcApp1 - <a style="color: white;" asp-area="" asp-controller="Privacy" asp-action="Index">Privacy</a>
+        </div>
+    </footer> 
+
+</section>
+
+
+
